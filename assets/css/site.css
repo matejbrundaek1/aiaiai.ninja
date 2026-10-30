@@ -1,0 +1,21 @@
+
+/* aiaiai.ninja — additions to the styles that came from Wix */
+
+/* Background pictures and video posters were measured in pixels when the page was saved (1440 wide).
+   On a computer they must follow the width of their strip at every browser width, as Wix's script did.
+   (The phone pages are always laid out 320 wide, so they keep the saved size.) */
+html[data-device="desktop"] wow-image.bgImage > img,
+html[data-device="desktop"] wow-image.bgVideoposter > img { width: 100% !important; }
+
+/* /aiaiai.ninja/general-clean — the picture / poster behind the page was measured in pixels when the page was saved (1440 x 900, phone 320 x 545).
+   Wix sized it to the screen again in the browser: the poster to the full window height on a computer,
+   the phone picture to the visible height + 79 px (Wix kept a little extra for its scroll effect). */
+html[data-device="desktop"] [id^="pageBackground"] wow-image.bgVideoposter > img { height: 100% !important; }
+html[data-device="mobile"] [id^="pageBackground"] wow-image.bgImage > img { height: calc(100% + 79px) !important; }
+
+/* contact form: a failed send shows in the same place as "Thanks for submitting!", in the red of the field errors */
+.form-failed, .form-failed * { color: rgb(255, 64, 64) !important; }
+
+/* icons of the picture viewer (arrows, X, expand) — Wix's own icon font; the build keeps only fonts used on the pages themselves,
+   so the font file is kept here (static/assets/fonts) and loaded only when the viewer opens */
+@font-face { font-family: progallery-svg-font-icons; src: url("/aiaiai.ninja/assets/fonts/progallery-svg-font-icons.woff") format("woff"); font-weight: 400; font-style: normal; }
